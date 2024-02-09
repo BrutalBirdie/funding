@@ -161,6 +161,16 @@ msgstr ""
 msgid "Timestamp"
 msgstr ""
 
+#: Civi/Funding/Api4/Action/FundingCaseType/GetFieldsAction.php
+#: managed/OptionValuesFileType.mgd.php
+msgid "Transfer Contract Template"
+msgstr "Vorlage für Weiterleitungsvertrag"
+
+#: Civi/Funding/Api4/Action/FundingCaseType/GetFieldsAction.php
+#: managed/OptionValuesFileType.mgd.php
+msgid "Payment Instruction Template"
+msgstr "Vorlage für Zahlungsanweisung"
+
 #: Civi/Funding/Api4/Action/FundingDrawdown/GetFieldsAction.php
 #: Civi/Funding/Api4/Action/FundingTransferContract/GetFieldsAction.php
 #: Civi/Funding/EventSubscriber/Remote/FundingCaseGetFieldsSubscriber.php
@@ -866,6 +876,10 @@ msgstr "Bewilligen"
 msgid "Validation failed: %1"
 msgstr "Validierung fehlgeschlagen: %1"
 
+#: ang/afformFundingCaseTypeTemplates.aff.php
+msgid "Funding Case Type Templates"
+msgstr "Vorlagen für Förderfalltyp"
+
 # Nicht benötigt, solange nur zur Initialisierung der ts Funktion in JavaScript verwendet.
 #: ang/crmFunding/application/application.js
 #: ang/crmFunding/application/applicationEditor.directive.js
@@ -1420,16 +1434,8 @@ msgid "Funding Program"
 msgstr "Förderprogramm"
 
 #: managed/OptionValuesFileType.mgd.php
-msgid "Transfer Contract Template"
-msgstr "Vorlage für Weiterleitungsvertrag"
-
-#: managed/OptionValuesFileType.mgd.php
 msgid "Payment Instruction"
 msgstr "Zahlungsanweisung"
-
-#: managed/OptionValuesFileType.mgd.php
-msgid "Payment Instruction Template"
-msgstr "Vorlage für Zahlungsanweisung"
 
 #: managed/SavedSearchFundingApplicationProcesses.mgd.php
 msgid "Funding Applications"
