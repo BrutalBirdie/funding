@@ -19,6 +19,7 @@ declare(strict_types = 1);
 
 namespace Civi\Funding;
 
+use Civi\Api4\EntityFile;
 use Civi\Api4\X_EntityFile;
 use Civi\Api4\ExternalFile;
 use Civi\Funding\Entity\ExternalFileEntity;
@@ -143,6 +144,28 @@ final class FundingExternalFileManager implements FundingExternalFileManagerInte
     return $externalFile;
   }
 
+
+
+  /**
+   * @inheritDoc
+   */
+  public function getFileByFileId(int $fileId, string $entityTable, int $entityId): ?ExternalFileEntity {
+    if (0 === $this->api4->countEntities(EntityFile::getEntityName(), CompositeCondition::fromFieldValuePairs([
+      'file_id' => $fileId,
+      'entity_table' => $entityTable,
+      'entity_id' => $entityId,
+    ]))) {
+      return NULL;
+    }
+
+    $result = $this->api4->getEntities(ExternalFile::getEntityName(), CompositeCondition::fromFieldValuePairs([
+      'extension' => E::SHORT_NAME,
+      'file_id' => $fileId,
+    ]));
+
+    return ExternalFileEntity::singleOrNullFromApiResult($result);
+  }
+
   /**
    * @inheritDoc
    */
@@ -164,6 +187,7 @@ final class FundingExternalFileManager implements FundingExternalFileManagerInte
       ['checkPermissions' => FALSE]
     );
 
+    /** @phpstan-ignore-next-line */
     return ExternalFileEntity::allFromApiResult($result);
   }
 
